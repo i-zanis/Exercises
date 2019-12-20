@@ -1,0 +1,23 @@
+#simple simulation of an online store
+print("Welcome to our store.\nWe have the finest of the blades")
+storeSelection = { 1:"Zweihänder", 2:"Svärdstav",
+3:"Jian", 4:"Longsword", 5:"Broadsword", 6:"Katana"}
+
+
+for name, product in storeSelection.items():
+  print(name,product)
+
+print("Press the corresponding number to select the item from our selection")
+onlineBasket = []
+while True:
+  answer = input()
+  if answer == "q":
+    break
+  elif int(answer) in storeSelection.keys():
+        onlineBasket.append(storeSelection[int(answer)])
+  else:
+        print("Please enter the corresponding   product number from our selection.")
+      
+
+print(onlineBasket)
+print(storeSelection.keys())
