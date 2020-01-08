@@ -1,0 +1,987 @@
+Welcome to the string manipulation  
+
+def string_manipulation(user_name): 
+
+  while True: 
+
+    print("Please enter three strings") 
+
+    p, q, r = (input("Please enter a string: ") for _ in range(3)) 
+
+    conc1 = p + q + r  
+
+    conc2 = r + p 
+
+    print(conc1.upper()) 
+
+    print(conc2.lower()) 
+
+    print(len(conc1)) 
+
+    yes = input("Enter [Yes] for the process to repeat: ") 
+
+    if yes.lower() == "yes": 
+
+      continue 
+
+    else:  
+
+      break 
+
+  print("\n\nThank you for trying my program " + "[" + user_name.title() + "]" + ".")   
+
+   
+
+string_manipulation("iKrAm") 
+
+print(u"\u2661" + "UWL" + u"\u2661") 
+
+   #Concatenation (p+q+r) in capital letters 
+
+#• Concatenation of (r + p) in lowercase 
+
+#• total number of characters within (p+q+r) 
+
+ 
+
+ 
+
+def age_classifier(user_name): 
+
+  print("This is an age classifier") 
+
+  age = float(input(user_name + " Please enter your age: ")) 
+
+  if age <=1 or age>0: 
+
+    print(user_name.title() + ", you're a baby." + u"\U0001F476" + "\n Your time hasn't come yet.") 
+
+   
+
+age_classifier("ikRAM") 
+
+ 
+ 
+
+'''2. Write python program to allow the user to input his/her age. Then the 
+
+program will show if the person is an infant, child, a teenager or an adult. ''' 
+
+ 
+
+def age_classifier(user_name): 
+
+  print("This is an age classifier.\n") 
+
+  age = float(input(user_name.title() + " Please enter your age: ")) 
+
+  if age <=1 and age>0: 
+
+    print(user_name.title() + ", you're an infant." + u"\U0001F476" + "\nYour time hasn't come yet, little baby!") 
+
+  elif age>1 and age<13: 
+
+    print(user_name.title() + ", you're a child." +   u"\U0001F9D2"  + "\nJust wait a little more!") 
+
+  elif age>=13 and age<18: 
+
+        print(user_name.title() + ", you're a teenager." + u"\U0001F9D2" + "\nYou're not a kid anymore!") 
+
+ 
+
+  elif age>=18 : 
+
+        print(user_name.title() + " you're an adult." + u"\U0001F574" + "\nYou are free to choose your own destiny!")  
+
+  else: 
+
+      print(user_name.title() + ",it seems that you haven't been born yet." + u"\U0001F930" + "\nSoon to break out to the real world!") 
+
+   
+
+age_classifier("ikRAM") 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+def BMI(): 
+
+#BMI non-basic BMI function 
+
+  option = "" 
+
+  #adding the option for Imperial or metric units 
+
+  while option.lower() != "imp" and option.lower() != "met": 
+
+    option = input("Please type [IMP] for Imperial or type [MET] for metric system: ") 
+
+ 
+
+  #input for imperial 
+
+  if option.lower() == "imp": 
+
+    height = 0.0254 * float(input("Enter your height in inches? ")) 
+
+    weight = 0.4536 * float(input("Enter your weight in pounds? ")) 
+
+  #input for metric, requests centimetres and converted to metres   
+
+  elif option.lower() =="met": 
+
+    height = (float(input("Enter your height in centimetres? "))/100) 
+
+    weight = float(input("Enter your weight in kilograms? ")) 
+
+  #bmi formula 
+
+  bmi = round(weight/(height*height), 1) 
+
+  #ideal weight formula 24.9 = ideal bmi 
+
+  ideal_weight = 24.9*(height*height)  
+
+  to_lose_weight = round(weight-ideal_weight, 1) 
+
+  to_gain_weight = round(ideal_weight - weight, 1) 
+
+   
+
+  if option.lower() == "imp": 
+
+    to_lose_weight = round(2.20462 * to_lose_weight, 1) #conv to pounds 
+
+    to_gain_weight = round(2.20462 * to_gain_weight, 1) #conv to pounds 
+
+    unit = " pounds" 
+
+  else: 
+
+    unit = " kilograms" 
+
+  #BMI categories 
+
+  if bmi <= 18.5: 
+
+    category = "underweight" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+    print("You need to gain " + str(to_gain_weight) + unit) 
+
+  elif bmi<=24.9: 
+
+    category = "healthy" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+  elif bmi>=29.9: 
+
+    category = "overweight" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+    print("You need to lose " + str(to_lose_weight) + unit) 
+
+ 
+
+BMI() 
+
+ 
+
+BMI() 
+
+ 
+
+LOGBOOK 7 
+
+num = 1 
+
+while num < 11: 
+
+    print(num * num) #Print num squared 
+
+    num += 1 # Increment num (make sure to do this!) 
+
+ 
+
+ 
+
+num = 0 
+
+while num<=15: 
+
+    num += 1 
+
+    if num == 3: 
+
+        continue 
+
+    if num == 5: 
+
+        continue 
+
+    elif num == 7: 
+
+        continue 
+
+    else:  
+
+        print(num) 
+
+ 
+
+def password(user_name): #defining a function  
+
+    password = "changeme" 
+
+    failed_attempts = 0 
+
+    pass_attempt = 0 
+
+    print("Hello " + user_name.title() +"\n") 
+
+    while pass_attempt != password: 
+
+      pass_attempt = input("\n\nPlease enter the correct password: ") 
+
+      failed_attempts += 1 
+
+      continue 
+
+    else: 
+
+        print("\n\033[1;32;10mPassword Accepted\nYou have made " + str(failed_attempts) + " attempts.") 
+
+ 
+
+password("Ikram") 
+
+ 
+
+ 
+
+ 
+
+exercise  
+
+def password(user_name): #defining a function  
+
+    password = "changeme" 
+
+    failed_attempts = 0 
+
+    pass_attempt = 0 
+
+    print("Hello " + user_name.title() +"\n") 
+
+    while pass_attempt != password: 
+
+      pass_attempt = input("\n\nPlease enter the correct password: ") 
+
+      failed_attempts += 1 
+
+      if failed_attempts == 5: 
+
+        print("\n\033[1;31;10mAccess denied.\nPlease contact the IT services to reset your password.") 
+
+        break 
+
+       
+
+    else: 
+
+        print("\n\033[1;32;10mPassword Accepted\nYou have made " + str(failed_attempts) + " attempts.") 
+
+ 
+
+password("Ikram") 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Week 10 
+
+ 
+
+#dictionary with games 
+
+blizzard_games = {"warcraft3":15, "overwatch": 20, "heroes of the storm": "free", "starcraft": 10, "diablo": "unreleased"} 
+
+ 
+
+print(blizzard_games) #printing the dictionary 
+
+ 
+
+ 
+
+#dictionary with games 
+
+blizzard_games = {"warcraft3":15, "overwatch": 20, "heroes of the storm": "free", "starcraft": 10, "diablo": "unreleased"} 
+
+ 
+
+print(blizzard_games) #printing the dictionary 
+
+ 
+
+print("\nThe price of Warcraft3 is: " + str(blizzard_games["warcraft3"]) + " pounds.") 
+
+print("Warcraft3 is on discount!") 
+
+blizzard_games["warcraft3"] = 7 #adjusting the price in the dictionary 
+
+print("The price of Warcraft3 now is: " + str(blizzard_games["warcraft3"]) + " pounds.") 
+
+ 
+
+#dictionary with games 
+
+blizzard_games = {"warcraft3":15, "overwatch": 20, "heroes of the storm": "free", "starcraft": 10, "diablo": "unreleased"} 
+
+ 
+
+print(blizzard_games) #printing the dictionary 
+
+ 
+
+print("\nThe price of Warcraft3 is: " + str(blizzard_games["warcraft3"]) + " pounds.") 
+
+print("Warcraft3 is on discount!") 
+
+blizzard_games["warcraft3"] = 7 #adjusting the price in the dictionary 
+
+print("The price of Warcraft3 now is: " + str(blizzard_games["warcraft3"]) + " pounds.\n") 
+
+ 
+
+print(blizzard_games, "\n") 
+
+blizzard_games["hearthstone"] = "free"#adding a new item 
+
+print(blizzard_games, "\n") 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+#dictionary with games 
+
+blizzard_games = {"warcraft3":15, "overwatch": 20, "heroes of the storm": "free", "starcraft": 10, "diablo": "unreleased"} 
+
+ 
+
+print(blizzard_games) #printing the dictionary 
+
+ 
+
+print("\nThe price of Warcraft3 is: " + str(blizzard_games["warcraft3"]) + " pounds.") 
+
+print("Warcraft3 is on discount!") 
+
+blizzard_games["warcraft3"] = 7 #adjusting the price in the dictionary 
+
+print("The price of Warcraft3 now is: " + str(blizzard_games["warcraft3"]) + " pounds.\n") 
+
+ 
+
+print(blizzard_games, "\n") 
+
+blizzard_games["hearthstone"] = "free"#adding a new item 
+
+print(blizzard_games, "\n") 
+
+ 
+
+answer = "yes" 
+
+while answer.lower() == "yes": 
+
+  product = input("Please enter product name: ") 
+
+  price = int(input("Please enther product price: ")) 
+
+  blizzard_games[product] = price 
+
+  answer = input("\nType [yes] if you would like to enter another product: ") 
+
+print(blizzard_games) 
+
+ 
+
+ 
+
+ 
+
+#prompt to enter two numbers for testing 
+
+print("Please enter two numbers for calculation.") 
+
+first = int(input("Enter the first number:")) 
+
+second = int(input("Enter the second number: ")) 
+
+ 
+
+try: #try block check for ZeroDivisionError 
+
+  first/second 
+
+  print("\nDivide the first number by the second: " + str(first) + "/" +  str(second)) 
+
+  print("The division was successfull: " + str(first/second)) 
+
+ 
+
+except ZeroDivisionError: 
+
+  print("\nDivide the first number by the second: ") 
+
+  print("An error has occured due to zero division.\nThe try block will not execute further.") 
+
+ 
+
+ 
+
+ 
+
+ 
+
+blizzard_games = {"warcraft3":15, "overwatch": 20, "heroes of the storm": "free", "starcraft": 10, "diablo": "unreleased"} 
+
+ 
+
+print(blizzard_games) #printing the dictionary 
+
+ 
+
+print("\nThe price of Warcraft3 is: " + str(blizzard_games["warcraft3"]) + " pounds.") 
+
+print("Warcraft3 is on discount!") 
+
+blizzard_games["warcraft3"] = 7 #adjusting the price in the dictionary 
+
+print("The price of Warcraft3 now is: " + str(blizzard_games["warcraft3"]) + " pounds.\n") 
+
+ 
+
+print(blizzard_games, "\n") 
+
+blizzard_games["hearthstone"] = "free"#adding a new item 
+
+print(blizzard_games, "\n") 
+
+ 
+
+answer = "yes" #predefining the variable for the infinite prompt phase 
+
+while answer.lower() == "yes": 
+
+    product = input("Please enter product name: ") 
+
+    try: 
+
+        blizzard_games[product] # this will trigger a KeyError 
+
+    except KeyError:  
+
+        try: 
+
+            price = float(input("Please enter product price: ")) 
+
+            blizzard_games[product] = price 
+
+        except ValueError: #checking for numeric value 
+
+            print("Please enter a numeric value for the product.") 
+
+    # Else is executed if try does not fail 
+
+    else: 
+
+        print("The product you have entered already exists.") 
+
+    # Finally is always executed 
+
+    finally: 
+
+        answer = input("\nType [yes] if you would like to enter another product: ") 
+
+        print("\n", blizzard_games) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Logbook 8 
+
+ 
+
+Consider the following function:  
+
+def mystery (x, y):  
+
+result = (x + y) / (y - x)  
+
+return result  
+
+What is the result of the call mystery (2, 3)? 
+
+ 
+
+ 
+
+What does this program print?  
+
+def main(): a = 5 b = 7  
+
+    print(mystery(a, b))  
+
+def mystery(x, y):  
+
+    z = x + y  
+
+    z = z / 2.0 return z  
+
+main() 
+
+When running the program mystery(x,y) takes the values of variable a, b from main() and produces the result of 6.0 when main() is called. 
+
+ 
+
+ 
+
+ 
+
+What does this program print?  
+
+ 
+
+def main():  
+
+    a = 4 print(mystery(a + 1))  
+
+def mystery(x):  
+
+    y = x * x return y  
+
+main() 
+
+ 
+
+When we run the program mystery() takes the value from variable “a” in the main() function. The calculation inside mystery(x) is made and it returns “y” as a result that is then printed when main() is called. 
+
+ 
+
+ 
+
+# find the greatest among 3 numbers 
+
+#the function takes 3 values  
+
+#and compares them to find the greatest 
+
+def find_max(num1, num2, num3): 
+
+ 
+
+  if (num1 >= num2) and (num1 >= num3): 
+
+   largest = num1 
+
+  elif (num2 >= num1) and (num2 >= num3): 
+
+   largest = num2 
+
+  else: 
+
+   largest = num3 
+
+  print("The largest number is", largest) 
+
+ 
+
+find_max(50, 60, 30) 
+
+find_max(30, 50, 60) 
+
+find_max(60, 40, 50) 
+
+ 
+
+ 
+
+sampleList = [] 
+
+ 
+
+def list_sum(list_name): 
+
+#The function adds items in a pre-existing list. 
+
+#First it prompts the user to enter the number of items that he would like to be added. 
+
+#Then it prompts the user for the aforementioned amount and prints the summation of all numbers. 
+
+  num = int(input("Enter the amount of numbers you need to add: ")) 
+
+  for n in range(num): 
+
+    numbers = int(input('Enter number ')) 
+
+    sampleList.append(numbers) 
+
+  print("The sum of all items in the list is :", sum(sampleList)) 
+
+ 
+
+list_sum(sampleList) 
+
+ 
+
+def count_spaces(): 
+
+  spaces = 0 
+
+  for char in main(): 
+
+    if char == " ": 
+
+      spaces = spaces + 1 
+
+  print(spaces) 
+
+ 
+
+def main():  
+
+  userInput = input("Enter") 
+
+  return userInput 
+
+ 
+
+count_spaces() 
+
+ 
+
+ 
+
+ 
+
+logboo 9 
+
+ 
+
+#Prompting the user to enter 3 numbers for calculation 
+
+print("[Welcome]\nPlease enter 3 numbers to proceeed.\n") 
+
+ 
+
+num1 = int(input("Enter the first number: ")) 
+
+num2 = int(input("Enter the second number: ")) 
+
+num3 = int(input("Enter the third number: ")) 
+
+ 
+
+#basic function that returns the sum of 3 numbers 
+
+def sum_num(num1,num2, num3): 
+
+  sum_all = num1 + num2 + num3 
+
+  return sum_all 
+
+ 
+
+#basic function that returns the smallest of 3 numbers 
+
+def min_3(num1, num2, num3): 
+
+  if num1<= num2 and num1<= num3: 
+
+    return num1 
+
+  elif num2<= num1 and num2<= num3: 
+
+    return num2 
+
+  elif num3<= num2 and num3<= num1: 
+
+          return num3 
+
+ 
+
+#basic function that returns the square of the argument 
+
+def square_it(number): 
+
+  result = number * number 
+
+  return result 
+
+ 
+
+print(sum_num(num1,num2, num3)) #checking the result of the function 
+
+print(min_3(num1,num2,num3)) #checking the result of the function 
+
+ 
+
+print(square_it(num1))#checking the result of the function  
+
+print(square_it(num2))#for 3 different instances 
+
+print(square_it(num3)) 
+
+ 
+
+ 
+
+def BMI(): 
+
+#BMI non-basic BMI function 
+
+  option = "" 
+
+  #adding the option for Imperial or metric units 
+
+  while option.lower() != "imp" and option.lower() != "met": 
+
+    option = input("Please type [IMP] for Imperial or type [MET] for metric system: ") 
+
+ 
+
+  #input for imperial 
+
+  if option.lower() == "imp": 
+
+    height = 0.0254 * float(input("Enter your height in inches? ")) 
+
+    weight = 0.4536 * float(input("Enter your weight in pounds? ")) 
+
+  #input for metric, requests centimetres and converted to metres   
+
+  elif option.lower() =="met": 
+
+    height = (float(input("Enter your height in centimetres? "))/100) 
+
+    weight = float(input("Enter your weight in kilograms? ")) 
+
+  #bmi formula 
+
+  bmi = round(weight/(height*height), 1) 
+
+  #ideal weight formula 24.9 = ideal bmi 
+
+  ideal_weight = 24.9*(height*height)  
+
+  to_lose_weight = round(weight-ideal_weight, 1) 
+
+  to_gain_weight = round(ideal_weight - weight, 1) 
+
+   
+
+  if option.lower() == "imp": 
+
+    to_lose_weight = round(2.20462 * to_lose_weight, 1) #conv to pounds 
+
+    to_gain_weight = round(2.20462 * to_gain_weight, 1) #conv to pounds 
+
+    unit = " pounds" 
+
+  else: 
+
+    unit = " kilograms" 
+
+  #BMI categories 
+
+  if bmi <= 18.5: 
+
+    category = "underweight" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+    print("You need to gain " + str(to_gain_weight) + unit) 
+
+  elif bmi<=24.9: 
+
+    category = "healthy" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+  elif bmi>=29.9: 
+
+    category = "overweight" 
+
+    print("\nYour BMI is " + str(bmi) +" \nYour BMI indicates you are " + category) 
+
+    print("You need to lose " + str(to_lose_weight) + unit) 
+
+ 
+
+BMI() 
+
+ 
+
+#defining a function that prints a message for a number of times 
+
+#msg = your message, number=desired times to be printed 
+
+#3 colour choices = "green", "red", "blue" 
+
+def announcement(msg, number, colour): 
+
+  if colour == "green": 
+
+    print("\033[1;32;10m\n" + number * ("\n" + msg)) 
+
+  if colour == "red": 
+
+    print("\033[1;31;10m\n" + number * ("\n" + msg)) 
+
+  if colour == "blue": 
+
+    print("\033[1;34;10m\n" + number * ("\n" + msg)) 
+
+ 
+
+#calling the function 3 times 
+
+announcement("привет", 5, "green") 
+
+announcement("икрам", 6, "red") 
+
+announcement("пока", 1, "blue")   
+
+ 
+
+#Swapping two variables program 
+
+ 
+
+first = int(input("Enter the first number: ")) 
+
+second = int(input("Enter the second number: ")) 
+
+# To take inputs from the user 
+
+#x = input('Enter value of x: ') 
+
+#y = input('Enter value of y: ') 
+
+# create a temporary variable and swap the values 
+
+print("\nBefore invoking the function the numbers are: \nFirst number:  " + str(first) + "\nSecond number: " + str(second)) 
+
+ 
+
+def number_swap(x,y): 
+
+  x, y = y, x 
+
+  return x,y 
+
+   
+
+ 
+
+first, second = number_swap(first,second) 
+
+print("\nAfter invoking the function the numbers are: \nFirst number:  " + str(first) + "\nSecond number: " + str(second)) 
+
+ 
+ 
+
+ 
+
+ 
+
+# Program to check if the year is leap year 
+
+year = int(input("Please enter your desired year: ")) 
+
+#Get int year input from user 
+
+#leap year formula in if staments 
+
+if (year % 4) == 0: 
+
+   if (year % 100) == 0: 
+
+       if (year % 400) == 0: 
+
+           print(str(year) + " is a leap year.") 
+
+       else: 
+
+           print(str(year) + " is not a leap year.") 
+
+   else: 
+
+       print(str(year) + " is a leap year.") 
+
+else: 
+
+   print(str(year) + " is not a leap year.") 
+
+ 
+ 
+ 
+
+ 
+
+ 
+
+sfdfsf 
