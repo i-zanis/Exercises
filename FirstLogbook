@@ -44,8 +44,6 @@ print(u"\u2661" + "UWL" + u"\u2661")
 
  
 
- 
-
 def age_classifier(user_name): 
 
   print("This is an age classifier") 
